@@ -6,22 +6,22 @@ import React from "react";
 
 const Sidebar = ({isOpen, toggle}) => {
   return (
-    <aside className={`${classes.sidebarContainer} ${isOpen && classes.isOpen}`}>
+    <aside className={`${classes.sidebarContainer} ${isOpen && classes.isOpen}`} onClick={toggle}>
       <div className={classes.icon} onClick={toggle}>
         <FaTimes className={classes.closeIcon} />
       </div>
       <div className={classes.sidebarWrapper}>
         <ul className={classes.sidebarMenu}>
-          <LinkScroll className={classes.sidebarLink} to="about">
+          <LinkScroll className={classes.sidebarLink} to="about" onClick={toggle}>
             About
           </LinkScroll>
-          <LinkScroll className={classes.sidebarLink} to="discover">
+          <LinkScroll className={classes.sidebarLink} to="discover" onClick={toggle}>
             Discover
           </LinkScroll>
-          <LinkScroll className={classes.sidebarLink} to="services">
+          <LinkScroll className={classes.sidebarLink} to="services" onClick={toggle}>
             Services
           </LinkScroll>
-          <LinkScroll className={classes.sidebarLink} to="signup">
+          <LinkScroll className={classes.sidebarLink} to="signup" onClick={toggle}>
             Sign Up
           </LinkScroll>
         </ul>
