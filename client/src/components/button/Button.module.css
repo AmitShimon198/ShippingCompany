@@ -1,0 +1,40 @@
+.button {
+  border-radius: 50px;
+  background: #010606;
+  white-space: nowrap;
+  padding: 12px 30px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2 ease-in-out;
+}
+
+.button:hover {
+  transition: all 0.2 ease-in-out;
+  background: #01bf71;
+}
+
+.primary {
+  background: #fff;
+  color: #000;
+}
+
+.primary:hover {
+  background: #01bf71;
+}
+
+.big {
+  padding: 14px 48px;
+}
+
+.dark {
+  color: #010606;
+}
+.fontBig {
+  font-size: 20px;
+}

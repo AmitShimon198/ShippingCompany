@@ -9,7 +9,7 @@
   top: -100%;
   /* top: 0; */
   left: 0;
-  transition: 0.3s easy-in-out;
+  transition: 0.3s ease-in-out;
   opacity: 0;
   /* opacity: 1; */
 }
@@ -57,14 +57,14 @@
   font-size: 1.5rem;
   text-decoration: none;
   list-style: none;
-  transition: 0.2s easy-in-out;
+  transition: 0.2s ease-in-out;
   counter-reset: #fff;
   cursor: pointer;
 }
 
 .sidebarLink:hover {
   color: #01bf71;
-  transition: 0.2s easy-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .sideBtnWrap {
@@ -82,12 +82,12 @@
     outline: none;
     border: none;
     cursor: pointer;
-    transition: all 0.2s easy-in-out;
+    transition: all 0.2s ease-in-out;
     text-decoration: none;
 }
 
 .sidebarRoute:hover{
-    transition: all 0.2s easy-in-out;
+    transition: all 0.2s ease-in-out;
     background: #fff;
     color: #010606;
 }
