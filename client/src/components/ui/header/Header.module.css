@@ -1,0 +1,18 @@
+.headerContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 80px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.header {
+    margin-right: 1%;
+}
+
+.costImg {
+    width: 60px;
+    height: 60px;
+}

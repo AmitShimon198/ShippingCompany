@@ -1,0 +1,10 @@
+.select {
+    text-align: center;
+    color: #30a6f0;
+    height: 65px;
+    width: 50%;
+    border: 1px solid #e4ebed;
+    background: #fff;
+    background: url('https://shipo.co.il/ddc53737c3e3e9bc42d0125d0cb189cf.png') no-repeat;
+    background-position: 20px;
+}

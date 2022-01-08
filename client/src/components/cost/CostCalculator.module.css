@@ -1,0 +1,41 @@
+.container {
+    width: 80%;
+    border-radius: 15px;
+    background: #fff;
+    color: #000;
+    padding: 1vh;
+    margin-left: auto;
+}
+
+.subContainer {
+    display: flex;
+    width: 100%;
+}
+.inputsContainer{ width: 85%; }
+.buttonContainer {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.inputContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.giloyNaot {
+    margin-top: 10px;
+    padding-right: 10px;
+    color: #000;
+    direction: rtl;
+    text-align: right;
+    width: 100%;
+}
