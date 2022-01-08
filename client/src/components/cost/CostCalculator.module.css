@@ -11,11 +11,16 @@
     display: flex;
     width: 100%;
 }
-.inputsContainer{ width: 85%; }
+
+.inputsContainer {
+    width: 85%;
+}
+
 .buttonContainer {
     width: 15%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 

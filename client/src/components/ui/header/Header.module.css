@@ -11,7 +11,10 @@
 .header {
     margin-right: 1%;
 }
-
+.center{
+    text-align: center;
+    width: 100%;
+}
 .costImg {
     width: 60px;
     height: 60px;
