@@ -18,7 +18,7 @@ const Input: FunctionComponent<InputProps> = ({ onInputChange, name, type, place
     return (
         <div className={classes.inputContainer}>
             <label className={isBlur || value ? classes.label_blur : classes.label}>{label}</label>
-            <input className={classes.input} onFocus={toggleLabel} onBlur={toggleLabel} placeholder={placeholder} type={type} name={name} onChange={onChangeHandler} />
+            <input className={classes.input} onFocus={toggleLabel} onBlur={toggleLabel} placeholder={placeholder} type={type} name={name} onChange={onChangeHandler} value={value ? value : ''} />
         </div>
     );
 }

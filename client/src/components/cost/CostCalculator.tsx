@@ -1,11 +1,11 @@
 import { FunctionComponent, useState } from "react";
 import { calculatorMainCategories, subCategories } from "../../utils/tempData";
-import Button from "../button/Button";
 import Header from "../ui/header/Header";
 import Input from "../ui/input/Input";
 import Select from "../ui/select/Select";
 import classes from './CostCalculator.module.css';
 import { MdArrowForward, MdKeyboardArrowRight } from "react-icons/md";
+import Button from "../ui/button/Button";
 interface CostCalculatorProps {
 
 }
@@ -28,26 +28,36 @@ const defaultSelectPlaceholder = {
 }
 const CostCalculator: FunctionComponent<CostCalculatorProps> = () => {
     const [productDetails, setProductDetails] = useState(initialCalcState);
-    const [hover, setHover] = useState(false);
+    const [hover, setHover] = useState<boolean>(false);
+    const [isDirty, setIsDirty] = useState<boolean>(false);
 
     const onHover = () => {
         setHover((prev) => !prev);
     };
     const onMainCategorySelected = (value: string) => {
+        setIsDirty(true);
         setProductDetails(prev => ({ ...prev, mainCategory: value }))
     }
     const onSubCategorySelected = (value: string) => {
+        setIsDirty(true);
         setProductDetails(prev => ({ ...prev, subCategory: value }))
     }
     const onInputChange = ({ name, value }: { name: string; value: any }) => {
-        setProductDetails(prev => ({ ...prev, [name]: value }))
+        setProductDetails(prev => ({ ...prev, [name]: +value }))
+    }
+    const onStartCalculation = (event: any) => {
+        console.log('start calculate', productDetails);
+        console.log('finish calculate');
+        setIsDirty(false);
+        setProductDetails(initialCalcState)
+
     }
     return (<>
         <Header imageAlt="Cost Icon" imageSrc="https://shipo.co.il/5a773b67b636d95a473087e3f7a21013.png" headerText={headerText} />
         <div className={classes.container}>
             <div className={classes.subContainer}>
                 <div className={classes.buttonContainer}>
-                    <Button primary={false} dark={false} big={false} bigFont={false} onHover={onHover}>
+                    <Button disabled={!isDirty} onClickHandler={onStartCalculation} primary={false} dark={false} big={false} bigFont={false} onHover={onHover}>
                         {buttonText}
                         {hover ? (
                             <MdArrowForward className={classes.ArrowForward} />
@@ -58,8 +68,8 @@ const CostCalculator: FunctionComponent<CostCalculatorProps> = () => {
                 </div>
                 <div className={classes.inputsContainer}>
                     <div className={classes.selectContainer}>
-                        {<Select handelChange={onSubCategorySelected} selectOptions={subCategories[productDetails?.mainCategory] || [defaultSelectPlaceholder]} />}
-                        {calculatorMainCategories && <Select handelChange={onMainCategorySelected} selectOptions={calculatorMainCategories} />}
+                        {<Select value={productDetails.subCategory} handelChange={onSubCategorySelected} selectOptions={subCategories[productDetails?.mainCategory] || [defaultSelectPlaceholder]} />}
+                        {calculatorMainCategories && <Select value={productDetails.mainCategory} handelChange={onMainCategorySelected} selectOptions={calculatorMainCategories} />}
                     </div>
                     <div className={classes.inputContainer}>
                         <Input type='number' name='weight' onInputChange={onInputChange} value={productDetails.weight} label="משקל" />
